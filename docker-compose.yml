@@ -1,0 +1,12 @@
+version: '3'
+services:
+  calculator:
+    container_name: calculator
+    build:
+      context: ./
+      dockerfile: Dockerfile
+      args:
+        image_name: calculator-app
+    image: calculator-app
+    ports:
+      - "5000:5000"

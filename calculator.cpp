@@ -1,36 +1,22 @@
 #include <iostream>
-using namespace std;
+#include <string>
+#include <cmath>
+
+#include <flask/flask.hpp>
 
 int main() {
-    double num1, num2;
-    char operation;
-
-    cout << "Enter first number: ";
-    cin >> num1;
-
-    cout << "Enter second number: ";
-    cin >> num2;
-
-    cout << "Enter an operation (+, -, *, /): ";
-    cin >> operation;
-
-    switch (operation) {
-        case '+':
-            cout << num1 + num2;
-            break;
-        case '-':
-            cout << num1 - num2;
-            break;
-        case '*':
-            cout << num1 * num2;
-            break;
-        case '/':
-            cout << num1 / num2;
-            break;
-        default:
-            cout << "Invalid operator";
-            break;
-    }
-
+    Flask app;
+    app.route("/", []() {
+        return "Welcome to the calculator!";
+    });
+    app.route("/calculate", []() {
+        return "Enter your calculation in the URL in the format '/calculate/<expression>', where <expression> is the calculation you want to perform.";
+    });
+    app.route("/calculate/<expression>", [](std::string expression) {
+        // Evaluate the expression
+        double result = eval(expression.c_str());
+        return std::to_string(result);
+    });
+    app.run();
     return 0;
 }

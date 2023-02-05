@@ -1,10 +1,3 @@
-<style>
-    body {
-        background-color: black;
-        color: white;
-    }
-</style>
-
 from flask import Flask, request
 
 app = Flask(__name__)
@@ -12,6 +5,12 @@ app = Flask(__name__)
 @app.route('/')
 def calculator():
     return '''
+        <style>
+            body {
+                background-color: black;
+                color: white;
+            }
+        </style>
         <form action="/" method="post">
             <input type="text" name="expression">
             <input type="submit" value="Calculate">

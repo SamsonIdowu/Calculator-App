@@ -33,9 +33,9 @@ def evaluate_expression():
     expression = request.form['expression']
     try:
         result = eval(expression)
-        return 'Result: {}'.format(result)
+        return 'Result: {} <br><br><a href="/" style="background-color: white; padding: 10px; border-radius: 5px; color: black; text-decoration: none;">Return to Calculator</a>'.format(result)
     except:
-        return 'Invalid expression'
+        return 'Invalid expression <br><br><a href="/" style="background-color: white; padding: 10px; border-radius: 5px; color: black; text-decoration: none;">Return to Calculator</a>'
 
 if __name__ == '__main__':
     app.run()

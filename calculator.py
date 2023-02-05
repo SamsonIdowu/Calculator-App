@@ -9,11 +9,22 @@ def calculator():
             body {
                 background-color: black;
                 color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+            }
+            form {
+                width: 500px;
+                padding: 20px;
+                background-color: white;
+                color: black;
+                border-radius: 10px;
             }
         </style>
         <form action="/" method="post">
-            <input type="text" name="expression">
-            <input type="submit" value="Calculate">
+            <input type="text" name="expression" style="width: 100%; padding: 10px; font-size: 20px;">
+            <input type="submit" value="Calculate" style="width: 100%; padding: 10px; font-size: 20px;">
         </form>
     '''
 

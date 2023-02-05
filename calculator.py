@@ -1,3 +1,10 @@
+<style>
+    body {
+        background-color: black;
+        color: white;
+    }
+</style>
+
 from flask import Flask, request
 
 app = Flask(__name__)
